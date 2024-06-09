@@ -1,8 +1,9 @@
-# AMSP-UOD
+# AMSP-UOD | AAAI-24
 ```
 The 38th Annual AAAI Conference on Artificial Intelligence (AAAI), 2024
 ```
 This is an official PyTorch implementation of paper [AMSP-UOD: When Vortex Convolution and Stochastic Perturbation Meet Underwater Object Detection](https://arxiv.org/abs/2308.11918)
+
 ![fig1 (5)](https://github.com/Hikari0608/Underwater-object-detection/assets/88725956/b719e189-a34e-474f-af61-f9c1cad7220b)
 
 ## Quick Start
