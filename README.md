@@ -21,6 +21,8 @@ pip install -r requirements.txt
 ```
 
 ### 3. Train Model (Optional, requires Datasets and Cuda)
+Our default code uses NMS-Similar algorithm from the paper, and you should either turn off val validation or post-process that use the traditional NMS algorithm before training.
+This is done by switching the file `./utils/general.py` from lines 950 to 953.
 ```Command Line
 conda activate AMSP_UOD
 ./train.sh 0
@@ -63,5 +65,13 @@ You can cite our work in the following format:
 
 ### AAAI-24
 ```bibtex
-Accepted, will update shortly.
+@inproceedings{AMSP-UOD,
+  title={AMSP-UOD: When Vortex Convolution and Stochastic Perturbation Meet Underwater Object Detection},
+  author={Zhou, Jingchun and He, Zongxin and Lam, Kin-Man and Wang, Yudong and Zhang, Weishi and Guo, ChunLe and Li, Chongyi},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={7},
+  pages={7659--7667},
+  year={2024}
+}
 ```
