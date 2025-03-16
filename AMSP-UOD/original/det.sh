@@ -1,0 +1,1 @@
+python detect.py --weights weights/urpc/ours-amsp-uod.pt --source urpc --device 0

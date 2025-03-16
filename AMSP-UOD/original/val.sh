@@ -1,0 +1,1 @@
+python val.py --weights ./weights/urpc/ours-amsp-uod.pt --data urpc.yaml --img 640 --device 1 
