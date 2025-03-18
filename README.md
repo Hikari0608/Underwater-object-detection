@@ -1,6 +1,6 @@
-# [TPAMI2025] Spatial Residual for Underwater Object Detection
+# [Research for Underwater Object Detection] Balancing Real-Time and Accuracy in Resource-Constrained Underwater Scenarios
 
-Research for Underwater Object Detection
+The TRT weights used are publicly available and the training code is being processed. ☺
 
 ## Directory Structure (Continuously updated)
 
