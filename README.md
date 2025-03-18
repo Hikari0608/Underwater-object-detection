@@ -1,6 +1,6 @@
-# Research for Underwater Object Detection
+# [TPAMI2025] Spatial Residual for Underwater Object Detection
 
-Welcome to my research repository.
+Research for Underwater Object Detection
 
 ## Directory Structure (Continuously updated)
 
