@@ -1,6 +1,8 @@
 # [Research for Underwater Object Detection] Balancing Real-Time and Accuracy in Resource-Constrained Underwater Scenarios
 
-The TRT weights used are publicly available and the training code is being processed. ☺
+The TRT [weights](https://github.com/Hikari0608/Underwater-object-detection/releases/tag/v0.0.0) used are publicly available and the training code is being processed.
+
+If you are interested in Water-Related Optical Image, you can view [this](https://github.com/zhoujingchun03/Sea-IC).
 
 ## Directory Structure (Continuously updated)
 
