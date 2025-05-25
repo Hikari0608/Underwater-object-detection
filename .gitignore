@@ -1,3 +1,7 @@
 rtdetr-bsr5-1024.engine
 
 rtdetr-r101.engine
+
+__pycache__/
+
+mmyolo
