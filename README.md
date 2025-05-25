@@ -51,6 +51,8 @@ pip install ultralytics
 
 For specific instructions on how to use these APIs for performance validation or image prediction, please refer to the [official Ultralytics documentation](https://github.com/ultralytics/ultralytics).
 
+#### Train
+You can see detail in [Spatial-Residual](https://github.com/Hikari0608/Underwater-object-detection/tree/main/Spatial-Residual)
 
 #### Val
 ```bash
