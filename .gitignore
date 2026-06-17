@@ -5,3 +5,13 @@ rtdetr-r101.engine
 __pycache__/
 
 mmyolo
+
+*.pt
+
+*.out
+
+/runs
+
+slurm
+
+output

@@ -1,0 +1,1 @@
+yolo train model=models/bsr5-detr.yaml data=../../datas/ruod.yaml epochs=300 imgsz=640 device=0,1,2,3 seed=0

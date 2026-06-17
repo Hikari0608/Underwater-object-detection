@@ -1,95 +1,34 @@
-# [Research for Underwater Object Detection] Balancing Real-Time and Accuracy in Resource-Constrained Underwater Scenarios
+# Underwater Object Detection
 
-The TRT [weights](https://github.com/Hikari0608/Underwater-object-detection/releases/tag/v0.0.0) used are publicly available and the training code is being processed.
+This repository collects the code, weights, and notes for two underwater object detection lines of work:
 
-If you are interested in Water-Related Optical Image, you can view [this](https://github.com/zhoujingchun03/Sea-IC).
+- AMSP-UOD, the AAAI-2024 project under `AMSP-UOD/`
+- Spatial Residual for Underwater Object Detection, the TPAMI-2025 project under `Spatial-Residual/`
 
-## Directory Structure (Continuously updated)
+The root README is an index only. Usage, training, validation, and prediction commands live in the corresponding subdirectory README files for each code version.
 
-```
-Spatial-Residual
-├── BSR5-DETR
-│   └── weights
-│       ├── rtdetr-bsr5-1024.engine (Ours)
-│       ├── rtdetr-bsr5-512.engine (Ours)
-│       ├── rtdetr-r101.engine
-│       └── rtdetr-r50.engine
-├── BSR5-YOLO
-│   └── weights
-│       ├── bsr5-l.engine (Ours)
-│       ├── bsr5-m.engine (Ours)
-│       ├── bsr5-s.engine (Ours)
-│       ├── yolov8l.engine
-│       ├── yolov8l_ruod.engine (MMYOLO)
-│       ├── yolov8m.engine
-│       ├── yolov8m_ruod.engine (MMYOLO)
-│       ├── yolov8s.engine
-│       └── yolov8s_ruod.engine (MMYOLO)
-├── datas
-│   ├── ruod.yaml
-│   └── urpcB.yaml
-└── README.md
-```
+## Directory Map
 
-Each directory includes detailed documentation and relevant materials for the corresponding project.
+| Directory | Method / version | What it contains | Where to read usage |
+| --- | --- | --- | --- |
+| `AMSP-UOD/original` | AMSP-UOD original implementation, AAAI-2024 | Original PyTorch code, scripts, weights, and results | [AMSP-UOD/original/README.md](AMSP-UOD/original/README.md) |
+| `AMSP-UOD/latest` | AMSP-UOD latest packaged version | Latest runtime assets and exported weights | See the files in this directory |
+| `Spatial-Residual/BSR5-DETR` | BSR5-DETR, TPAMI-2025 code branch | Training, evaluation, and export code for the RT-DETR-based model | [Spatial-Residual/BSR5-DETR/README.md](Spatial-Residual/BSR5-DETR/README.md) |
+| `Spatial-Residual/BSR5-DETR-ultralytics` | BSR5-DETR Ultralytics-compatible version | Ultralytics-style inference and validation assets | See the files in this directory |
+| `Spatial-Residual/BSR5-YOLO` | BSR5-YOLO release branch, TPAMI-2025 | Released weights and related materials | See the files in this directory |
+| `Spatial-Residual/datas` | Shared datasets | Dataset configuration files such as `ruod.yaml` and `urpcB.yaml` | See the files in this directory |
 
-## API Installation Guide
+## Repository Notes
 
-For performance validation or image prediction tasks, you may utilize APIs from [Ultralytics](https://github.com/ultralytics/ultralytics). Follow the steps below:
+The available TRT weights are published in the release page linked in the project documentation. The corresponding usage examples are intentionally kept in the code-version directories so that each method can maintain its own environment and command set.
 
-### Installation (Only for Val/Predict)
-
-Ensure your Python environment is properly set up, then run the following command to install necessary dependencies:
-
-```bash
-conda create -n uod python=3.8 -y
-conda activate uod
-pip install ultralytics
-```
-
-### Usage
-
-For specific instructions on how to use these APIs for performance validation or image prediction, please refer to the [official Ultralytics documentation](https://github.com/ultralytics/ultralytics).
-
-#### Train
-You can see detail in [Spatial-Residual](https://github.com/Hikari0608/Underwater-object-detection/tree/main/Spatial-Residual)
-
-#### Val
-```bash
-conda activate uod
-yolo val model=bsr5-l.engine data=ruod.yaml
-yolo val model=rtdetr-bsr5-1024.engine data=ruod.yaml
-```
-
-the output will like:
-```
-                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 4200/4200 [00:49<00:00, 84.76it/s] 
-                   all       4200      22969      0.861       0.82      0.879      0.661
-           holothurian       4200       2382      0.847      0.778      0.844      0.546
-               echinus       4200       3425      0.884      0.857      0.916       0.57
-               scallop       4200       2373      0.844       0.75      0.852      0.563
-              starfish       4200       2373      0.856      0.867      0.915      0.598
-                  fish       4200       4001      0.808      0.693      0.789      0.569
-                corals       4200       2751      0.761      0.711      0.765      0.594
-                 diver       4200       1997      0.917      0.914      0.951      0.774
-            cuttlefish       4200       1607      0.964       0.96      0.976      0.874
-                turtle       4200       1296      0.952       0.95      0.975      0.874
-             jellyfish       4200        764      0.779      0.721      0.807      0.651
-Speed: 0.4ms preprocess, 5.3ms inference, 0.0ms loss, 1.1ms postprocess per image
-```
-
-#### Predict
-```bash
-conda activate uod
-yolo predict model=bsr5-l.engine source=<img-path>
-yolo predict model=rtdetr-bsr5-1024.engine source=<img-path>
-```
+For the most up-to-date implementation details, open the README in the target subdirectory first.
 
 ## Citation
 
-If you find any part of this repository useful for your work, please consider citing the relevant papers as follows:
+If you use this repository in your work, please cite the relevant paper for the code path you use.
 
-### AAAI-2024
+### AMSP-UOD, AAAI-2024
 
 ```bibtex
 @inproceedings{amsp,
@@ -103,18 +42,16 @@ If you find any part of this repository useful for your work, please consider ci
 }
 ```
 
-### TPAMI-2025
+### Spatial Residual, TPAMI-2025
 
 ```bibtex
 @ARTICLE{spatial,
+  title={Spatial residual for underwater object detection},
   author={Zhou, Jingchun and He, Zongxin and Zhang, Dehuan and Liu, Siyuan and Fu, Xianping and Li, Xuelong},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
-  title={Spatial Residual for Underwater Object Detection}, 
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   year={2025},
-  volume={},
-  number={},
-  pages={},
-  doi={10.1109/TPAMI.2025.3548652}}
+  publisher={IEEE}
+}
 ```
 
-Should you have any questions or need further assistance, feel free to reach out through GitHub Issues.
+For questions or implementation details, please open the README in the relevant subdirectory or use GitHub Issues.

@@ -1,0 +1,11 @@
+__include__: [
+  '../dataset/ruod_detection.yml',
+  '../runtime.yml',
+  './include/dataloader.yml',
+  './include/optimizer.yml',
+  './include/bsr5detr_512.yml',
+]
+
+output_dir: ./output/bsr5detr_512_300e_ruod
+checkpoint_step: 10
+epoches: 300
